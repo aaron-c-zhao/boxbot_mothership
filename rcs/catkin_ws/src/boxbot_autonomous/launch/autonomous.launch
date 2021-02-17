@@ -1,0 +1,9 @@
+<launch>
+
+    <rosparam file="$(find boxbot_autonomous)/config/boxbot_autonomous.yaml" command="load"/>
+
+    <node name="boxbot_auto" pkg="boxbot_autonomous" type="boxbot_autonomous_node" output="screen">
+        <remap from="joint_states"  to="boxbot/joint_states"/>
+    </node>
+    
+</launch>

@@ -1,0 +1,3 @@
+<launch>
+    <rosparam file="$(find boxbot_autonomous)/config/boxbot_autonomous.yaml" command="load"/>
+</launch>

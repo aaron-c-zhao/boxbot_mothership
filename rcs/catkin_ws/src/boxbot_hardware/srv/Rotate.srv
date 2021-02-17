@@ -1,0 +1,4 @@
+bool querry
+float64 position
+---
+float64 servoPos

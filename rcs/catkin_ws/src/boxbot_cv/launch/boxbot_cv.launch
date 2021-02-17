@@ -1,0 +1,13 @@
+<launch>
+
+    <node name="boxbot_cam" pkg="cv_camera" type="cv_camera_node" respawn="false">
+        <param name="device_id" value="0"/>
+        <param name="rate" value="5.0"/>
+    </node>
+
+    <node name="boxbot_cv" pkg="boxbot_cv" type="boxbot_cv_node" respawn="false" output="screen">
+        <param name="image_transport" value="compressed"/>
+    </node>
+
+
+</launch>

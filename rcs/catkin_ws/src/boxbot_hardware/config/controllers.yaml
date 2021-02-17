@@ -1,0 +1,39 @@
+
+boxbot:
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 100
+
+    arm_controller:
+        type: position_controllers/JointTrajectoryController
+        joints:
+            - base_tower_joint
+            - tower_arm_joint
+            - arm_wrist_joint
+
+    boxbot_control_loop:
+        loop_hz: 300
+        cycle_time_error_threshold: 0.01
+
+    hardware_interface:
+        joints:
+            - base_tower_joint
+            - tower_arm_joint
+            - arm_wrist_joint
+        mechanical_reduction:
+            - 69.2307692307
+            - 30.0
+            - 1.0
+        joint_diameter:
+            - 2
+            - 0.02865
+            - 0.02865
+        steps:
+            - 400
+            - 200 
+            - 1600
+        home:
+            - 0.0 
+            - 1.35
+            - 0.0
+            - 1.57

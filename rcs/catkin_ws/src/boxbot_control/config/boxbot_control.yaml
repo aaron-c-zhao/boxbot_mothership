@@ -1,0 +1,31 @@
+boxbot:
+
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  arm_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - base_tower_joint
+      - tower_arm_joint
+      - arm_wrist_joint
+    constraints:
+      base_tower_joint:
+        goal: 0.1
+        trajectory: 0.1
+      tower_arm_joint:
+        goal: 0.1
+        trajectory: 0.1
+      arm_wrist_joint:
+        goal: 0.1
+        trajectory: 0.1
+    gains:
+      base_tower_joint: {p: 6000.0, i: 0.01, d: 240.1}
+      tower_arm_joint: {p: 2000.0, i: 0.01, d: 100.1}
+      arm_wrist_joint: {p: 2000.0, i: 0.01, d: 220.1}
+
+    stop_trajectory_duration: 0.0
+
+
+

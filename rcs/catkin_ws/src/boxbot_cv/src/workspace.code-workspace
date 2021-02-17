@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "src",
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"python.autoComplete.extraPaths": [
+			"/home/moonpie/Projects/boxbot_mothership/rcs/catkin_ws/devel/lib/python3/dist-packages",
+			"/home/moonpie/ws_moveit/devel/lib/python3/dist-packages",
+			"/opt/ros/noetic/lib/python3/dist-packages"
+		],
+		"files.associations": {
+			"deque": "cpp",
+			"string": "cpp",
+			"vector": "cpp"
+		}
+	}
+}

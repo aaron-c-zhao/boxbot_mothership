@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run watchdog" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="boxbot-go" />
+    <working_directory value="$PROJECT_DIR$" />
+    <kind value="PACKAGE" />
+    <filePath value="$PROJECT_DIR$/services/watchdog/main.go" />
+    <package value="boxbot-go/services/ras/watchdog" />
+    <directory value="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>

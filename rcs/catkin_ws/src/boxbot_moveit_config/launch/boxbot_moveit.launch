@@ -1,0 +1,45 @@
+<launch>
+    <arg name="debug" default="false"/>
+    <arg name="use_rviz" default="true"/>
+    <arg name="use_gui" default="false"/>
+    <arg name="pipeline" default="ompl"/>
+    <arg name="load_robot_description" default="true"/>
+    <arg name="gazebo_gui" default="true"/>
+    <arg name="paused" default="false"/>
+    <arg name="urdf_path" default="$(find boxbot_description)/urdf/boxbot.xacro"/>
+    
+
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <rosparam param="source_list">[boxbot/joint_states]</rosparam>
+    </node>
+    
+
+    <include file="$(find boxbot_moveit_config)/launch/gazebo.launch">
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+        <arg name="urdf_path" value="$(arg urdf_path)"/>
+    </include>
+
+
+    <include file="$(find boxbot_control)/launch/boxbot_control.launch"/>
+
+    <!-- Run the main MoveIt executable with trajectory execution (we do not have controllers configured by default) -->
+    <include file="$(find boxbot_moveit_config)/launch/move_group.launch">
+        <arg name="allow_trajectory_execution" value="true"/>
+        <arg name="fake_execution" value="false"/>
+        <arg name="info" value="true"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="pipeline" value="$(arg pipeline)"/>
+        <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    </include>
+
+
+
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+    <include file="$(find boxbot_moveit_config)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+        <arg name="rviz_config" value="$(find boxbot_moveit_config)/launch/moveit.rviz"/>
+        <arg name="debug" value="$(arg debug)"/>
+    </include>
+</launch>

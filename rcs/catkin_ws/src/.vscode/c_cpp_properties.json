@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/moonpie/ws_moveit/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+        "/home/moonpie/ws_moveit/src/geometric_shapes/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_ros/benchmarks/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_ros/move_group/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_ros/robot_interaction/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_ros/moveit_servo/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_setup_assistant/include/**",
+        "/home/moonpie/ws_moveit/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+        "/home/moonpie/ws_moveit/src/moveit_visual_tools/include/**",
+        "/home/moonpie/ws_moveit/src/rviz_visual_tools/include/**",
+        "/home/moonpie/ws_moveit/src/warehouse_ros/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

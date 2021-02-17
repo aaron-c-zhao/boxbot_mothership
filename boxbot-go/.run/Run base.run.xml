@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run base" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="boxbot-go" />
+    <working_directory value="$PROJECT_DIR$" />
+    <envs>
+      <env name="RAS_BASE_ENABLE_SHUTDOWN" value="false" />
+    </envs>
+    <kind value="PACKAGE" />
+    <filePath value="$PROJECT_DIR$/services/base/main.go" />
+    <package value="boxbot-go/services/ras/base" />
+    <directory value="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>

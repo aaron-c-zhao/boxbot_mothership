@@ -1,0 +1,11 @@
+int8 cmd
+geometry_msgs/Quaternion goal
+int8 MOVE = 0
+int8 STOP = 1 
+int8 HOME = 2
+int8 GET_LOCATION = 3
+int8 ROTATE = 4
+int8 SET_POS = 5
+---
+geometry_msgs/Quaternion location
+int8 error_code

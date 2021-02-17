@@ -1,0 +1,5 @@
+int8 cmd
+int8 START = 0
+int8 STOP = 1
+---
+float64 pos_diff

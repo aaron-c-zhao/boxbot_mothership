@@ -1,0 +1,21 @@
+boxbot:
+
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  tower_controller:
+    type: effort_controllers/JointPositionController
+    joint: base_tower_joint
+    pid: {p: 10.0, i: 0.01, d: 0.01}
+
+
+  arm_controller:
+    type: effort_controllers/JointPositionController
+    joint: tower_arm_joint
+    pid: {p: 10.0, i: 0.01, d: 0.01}
+
+  wrist_controller:
+    type: effort_controllers/JointPositionController
+    joint: arm_wrist_joint
+    pid: {p: 10.0, i: 0.01, d: 0.01}

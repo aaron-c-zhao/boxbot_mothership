@@ -1,0 +1,19 @@
+<launch>
+    <!-- for gazebo simulation -->
+    <rosparam file="$(find boxbot_control)/config/boxbot_control.yaml" command="load"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/boxbot" args="joint_state_controller arm_controller"/>
+
+    <!-- for PID parameter tuning -->
+    <!--<rosparam file="$(find boxbot_control)/config/boxbot_control_PIG.yaml" command="load"/>-->
+
+    <!--<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/boxbot" args="joint_state_controller tower_controller arm_controller wrist_controller"/>-->
+    
+    <!-- load the robot state publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+          respawn="false" output="screen">
+          <remap from="/joint_states" to="/boxbot/joint_states"/>
+    </node>
+
+</launch>

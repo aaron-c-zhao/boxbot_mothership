@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run servo driver" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="boxbot-go" />
+    <working_directory value="$PROJECT_DIR$" />
+    <sudo value="true" />
+    <kind value="PACKAGE" />
+    <filePath value="$PROJECT_DIR$/services/rcs/servo_motor/main.go" />
+    <package value="boxbot-go/services/rcs/servo_motor" />
+    <directory value="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>

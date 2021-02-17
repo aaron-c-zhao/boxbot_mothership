@@ -1,0 +1,22 @@
+<launch>
+    <arg name="urdf_path" default="$(find boxbot_description)/urdf/boxbot.xacro"/>
+
+    <!-- load urdf model into parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf_path)'"/>
+    <!-- load the configurations of controllers into parameter server-->
+    <rosparam file="$(find boxbot_hardware)/config/controllers.yaml" command="load"/> 
+
+    <!-- launch the hardware_interfaces -->
+    <node name="boxbot_hardware" pkg="boxbot_hardware" type="node" respawn="false" output="screen" ns="/boxbot"/>
+    
+    <!-- launch the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/boxbot"  args="joint_state_controller arm_controller"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+          respawn="false" output="screen">
+          <remap from="/joint_states" to="/boxbot/joint_states"/>
+    </node>
+
+      <include file="$(find boxbot_moveit_config)/launch/boxbot_moveit_config.launch"/>
+</launch>

@@ -1,0 +1,12 @@
+controller_list:
+  - name: fake_boxbot_arm_controller
+    joints:
+      - base_tower_joint
+      - tower_arm_joint
+      - arm_wrist_joint
+  - name: fake_hand_controller
+    joints:
+      - wrist_hand_joint
+initial:  # Define initial robot poses.
+  - group: arm
+    pose: home
